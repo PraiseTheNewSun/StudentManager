@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from .models import StudentInfo
 
 
 # Create your views here.
@@ -19,4 +20,7 @@ def Home(request):
     return render(request, 'manager/home.html')
 
 def Dashboard(request):
-    return render(request, 'manager/dashboard.html')
+    context = {
+        'infos': StudentInfo.objects.all()
+    }
+    return render(request, 'manager/dashboard.html', context)
