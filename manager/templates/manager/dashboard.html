@@ -1,3 +1,41 @@
+{%load static%}
 {%block dashboard%}
+<style>
+    table, td{
+        border: solid 1px #000000;
+        font-family: helvetica;
+    }
+    td, th{
+        height: 50px;
+        padding:10px;
+        width: 200px
+    }
+    th{
+        height: 40px;
+        color: white;
+        text-align: left;
+        background-color: #000000;
+    }
+</style>
 <h1>Dashboard</h1>
+<div align="center">
+    <table>
+        <tr id="heading">
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Level</th>
+            <th>Address</th>
+        </tr>
+        {%for info in infos%}
+        <tr>
+            <td>{{info.first_name}}</td>
+            <td>{{info.last_name}}</td>
+            <td>{{info.email}}</td>
+            <td>{{info.level}}</td>
+            <td>{{info.address}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
 {%endblock%}
