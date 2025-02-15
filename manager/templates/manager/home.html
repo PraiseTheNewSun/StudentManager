@@ -1,16 +1,34 @@
 {% block home %}
-<h1>HomePage</h1>
-<
-<div style="width: 100%; height: 100vh; display: flex; margin: 0px; padding: 0px">
-    <div style="width: 30%; height: 100vh; background-color: orange; margin: 0px; padding: 0px"></div>
-    <div style="width: 40%; height: 100vh; background-color: red; margin: 0px; padding: 0px"; >
-        <form method="post">
-            {% csrf_token %}
-            <input type="text" name="username"><br>
-            <input type="password" name="password"><br>
-            <input type="submit" value="Log In">
-        </form>
+<style>
+    #body{
+        background-image: linear-gradient(120deg, #333999, #00ff00)
+    }
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+    input{
+        width: 300px;
+        height: 35px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 4px;
+        padding-left: 5px;
+    }
+</style>
+<body>
+    <div id="body" style="width: 100%; height: 100vh; display: flex">
+        <div style="width: 30%; height: 100vh; margin: 0px; padding: 0px"></div>
+        <div align="center" style="width: 40%; height: 100vh; margin: 0px; padding: 30vh">
+            <span>Log In to your account</span>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="username"><br>
+                <input type="password" name="password"><br>
+                <input type="submit" value="Log In">
+            </form>
+        </div>
+        <div style="width: 30%; height: 100vh; margin: 0px; padding: 0px"></div>
     </div>
-    <div style="width: 30%; height: 100vh; background-color: yellow; margin: 0px; padding: 0px"></div>
-</div>
+</body>
 {% endblock %}
